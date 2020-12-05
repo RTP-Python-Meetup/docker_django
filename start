@@ -1,0 +1,7 @@
+#!/bin/sh
+
+source .env
+
+cd $PROJECT || exit
+gunicorn django_docker.wsgi:application --bind 0.0.0.0:$PORT
+#python manage.py runserver 0.0.0.0:8000
